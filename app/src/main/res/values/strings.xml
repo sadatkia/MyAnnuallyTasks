@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyAnnuallyTasks</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="idusername">UserName</string>
+    <string name="idpassword">PassWord</string>
+    <string name="idlog_in">Log in</string>
+    <string name="idsign_up">Sign Up</string>
+</resources>
