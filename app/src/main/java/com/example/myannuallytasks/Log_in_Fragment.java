@@ -74,35 +74,23 @@ public class Log_in_Fragment extends Fragment {
              int pass=getArguments().getInt(ARG_PASS );
               String user=getArguments().getString(ARG_USER);
 
-              if((String.valueOf(pass).equals(mEditText_passWord.getText().toString()))&&(user.equals(mEditText_userName.getText()))){
+              if((String.valueOf(pass).equals(mEditText_passWord.getText().toString()))&&(user.equals(mEditText_userName.getText().toString()))){
 
                   Toast.makeText(getActivity(),"yes",Toast.LENGTH_SHORT).show();
+                  Intent intent = new Intent(getActivity(), TaskActivity.class);
+                  int number = Integer.parseInt(mEditText_passWord.getText().toString());
+                  intent.putExtra(USERNAME_LOGIN,  mEditText_userName.getText().toString());
+                  intent.putExtra(PASS_WORD_LOGIN, number);
+                  startActivity(intent);
               }
+              else
+              Toast.makeText(getActivity(),"this user is incorrect",Toast.LENGTH_SHORT).show();
 
               ////////////////////////////
-              Intent intent = new Intent(getActivity(), TaskActivity.class);
-              int number = Integer.parseInt(mEditText_passWord.getText().toString());
-              intent.putExtra(USERNAME_LOGIN,  mEditText_userName.getText().toString());
-              intent.putExtra(PASS_WORD_LOGIN, number);
-              startActivity(intent);
+
 
           }
       });
-/*
-        mEditText_userName.setText("user");
-        mEditText_passWord.setText("pass");*/
-
-////////////////////////////////////////////////intent section/////////////////////
-     /*   String User = getActivity().getIntent().getStringExtra(YOUR_USER_NAME);
-        int Pass = getActivity().getIntent().getIntExtra((YOUR_PASS), 0);
-
-
-
-        mEditText_userName.setText((User));
-        mEditText_passWord.setText(String.valueOf(Pass));*/
-
-
-
         return view;
     }
 

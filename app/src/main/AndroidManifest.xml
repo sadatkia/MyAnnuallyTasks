@@ -9,13 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Log_in_Activity">
+        <activity android:name=".TaskActivity"></activity>
+        <activity android:name=".First_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Sign_up_Activity" />
+        <activity android:name=".Log_in_Activity"></activity>
     </application>
 
 </manifest>

@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
+import static com.example.myannuallytasks.Sign_up_Fragment.YOUR_PASS;
+import static com.example.myannuallytasks.Sign_up_Fragment.YOUR_USER_NAME;
+
 public class Log_in_Activity extends AppCompatActivity {
 
     @Override
@@ -14,11 +17,22 @@ public class Log_in_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
 
         FragmentManager fragmentManager = getSupportFragmentManager();//      هر جا که قراره اد شود بزارید ولی معمولا همین جاست
-        Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container_Login);
+        //Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container_Login);
 
         fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_Login, new Log_in_Fragment())/////id container ,,,,,object Fragment
+                .replace(R.id.fragment_container_Login, createFragment())////id container ,,,,,object Fragment
                 .commit();
 
+
+
+
+
+    }
+
+    public Fragment createFragment() {
+       int  MyPass = getIntent().getIntExtra(YOUR_PASS, 0);
+       String  MyUser = getIntent().getStringExtra(YOUR_USER_NAME);
+
+        return Log_in_Fragment.newInstance(MyUser,MyPass);
     }
 }
