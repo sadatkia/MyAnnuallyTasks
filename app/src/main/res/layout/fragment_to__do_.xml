@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/id_fragment_todo"
     android:layout_width="match_parent"
@@ -7,15 +8,29 @@
     tools:context=".To_Do_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
 
-    <Button
-        android:id="@+id/button"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/id_floating_add_todo"
         android:layout_width="wrap_content"
-        android:layout_height="495dp"
-        android:text="Button" />
+        android:layout_height="73dp"
+        android:layout_gravity="bottom|right"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:src="@android:drawable/ic_input_add" />
+
+    <ImageView
+        android:id="@+id/id_background_todo"
+        android:layout_width="298dp"
+        android:layout_height="342dp"
+        android:layout_gravity="center"
+        tools:src="@tools:sample/backgrounds/scenic[11]" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_recyclerview_todo"
+        android:layout_width="206dp"
+        android:layout_height="224dp"
+        android:layout_gravity="center">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
